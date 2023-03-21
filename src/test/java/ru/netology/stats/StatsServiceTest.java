@@ -48,14 +48,14 @@ class StatsServiceTest {
 
 
     @Test
-void sredSumm() {
+    void sredSumm() {
         long sredsumm = service.srednee(new long[]{5, 5, 5, 12, 12, 12, 11});
         assertEquals(8, sredsumm);
     }
 
     @Test
     void pikPr() {
-        long pikPr = service.pikpr(new long [] {4,2,13,21,2,12});
+        long pikPr = service.pikpr(new long[]{4, 2, 13, 21, 2, 12});
         assertEquals(4, pikPr);
     }
 }

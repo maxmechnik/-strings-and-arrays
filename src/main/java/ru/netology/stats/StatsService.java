@@ -17,7 +17,6 @@ public class StatsService {
     }
 
 
-
     public long nijesred(long[] sales) {
         long nijesred = 0;
         long srednee = sumProdaj(sales) / sales.length;
@@ -43,9 +42,9 @@ public class StatsService {
 
     public long sumProdaj(long[] sales) {
         long summa = 0;
-        for (int i = 0; i <= sales.length -1; i++)
+        for (int i = 0; i <= sales.length - 1; i++)
             summa = summa + sales[i];
-   return summa;
+        return summa;
 
     }
 
@@ -60,15 +59,16 @@ public class StatsService {
     public long pikpr(long[] sales) {
         long max = 0;
         int nomer = 0;
-        for (int i = 0; i <= sales.length -1; i++)
-            if ( max <sales[i]) {
+        for (int i = 0; i <= sales.length - 1; i++)
+            if (max < sales[i]) {
                 max = sales[i];
-                nomer = i; }
+                nomer = i;
+            }
         return nomer + 1;
 
     }
 
 
-    }
+}
 
 
