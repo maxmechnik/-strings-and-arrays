@@ -16,46 +16,49 @@ class StatsServiceTest {
     void minSales() {
 
 
-        long minmesyac = service.minSales(new long[]{4, 5, 6, 9, 12, 14});
-        assertEquals(1, minmesyac);
+        long minMonth = service.minSales(new long[]{4, 5, 6, 9, 12, 14});
+        assertEquals(1, minMonth);
 
-        long minS1 = service.minSales(new long[]{4, 5, 6, 9, 12, 14, 45, 12, 18, 4, 11, 56});
-        assertEquals(10, minS1);
-
-    }
-
-    @Test
-    void sumProdaj() {
-
-        long sumprodaj = service.sumProdaj(new long[]{1, 2, 3, 4, 5, 6, 7});
-        assertEquals(28, sumprodaj);
+        long minSales = service.minSales(new long[]{4, 5, 6, 9, 12, 14, 45, 12, 18, 4, 11, 56});
+        assertEquals(10, minSales);
 
     }
 
     @Test
-    void nijesred() {
+    void sumSale() {
 
-        long nijesred = service.nijesred(new long[]{5, 5, 5, 10, 10, 10, 11});
-        assertEquals(3, nijesred);
+        long sumSale = service.sumSale(new long[]{1, 2, 3, 4, 5, 6, 7});
+        assertEquals(28, sumSale);
 
     }
 
     @Test
-    void visheSred() {
-        long visheSred = service.visheSred(new long[]{5, 5, 5, 12, 12, 12, 11});
-        assertEquals(4, visheSred);
+    void belowTheAverage() {
+
+        long belowTheAverage = service.belowTheAverage(new long[]{5, 5, 5, 10, 10, 10, 11});
+        assertEquals(3, belowTheAverage);
+
+    }
+
+    @Test
+    void aboveAverage() {
+        long aboveAverage = service.aboveAverage(new long[]{5, 5, 5, 12, 12, 12, 11});
+        assertEquals(4, aboveAverage);
     }
 
 
     @Test
-    void sredSumm() {
-        long sredsumm = service.srednee(new long[]{5, 5, 5, 12, 12, 12, 11});
-        assertEquals(8, sredsumm);
+    void averageSum() {
+        long averageSum = service.average(new long[]{5, 5, 5, 12, 12, 12, 11});
+        assertEquals(8, averageSum);
     }
 
     @Test
-    void pikPr() {
-        long pikPr = service.pikpr(new long[]{4, 2, 13, 21, 2, 12});
-        assertEquals(4, pikPr);
+    void peakSales() {
+        long peakSales = service.peakSales(new long[]{4, 2, 13, 21, 2, 12});
+        assertEquals(4, peakSales);
+        long peakSalesTest2 = service.peakSales(new long[]{4, 2, 12, 21, 12, 21});
+        assertEquals(6, peakSalesTest2);
     }
+
 }

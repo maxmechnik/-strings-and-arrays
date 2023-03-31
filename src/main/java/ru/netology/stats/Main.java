@@ -6,11 +6,11 @@ public class Main {
 
         StatsService service = new StatsService();
 
-        long minProdaja = service.minSales(new long[] {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18});
-        System.out.println(minProdaja);
+        long minSales = service.minSales(new long[] {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18});
+        System.out.println(minSales);
 
-        long sumProdaj = service.sumProdaj(new long[] {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18});
-        System.out.println(sumProdaj);
+        long sumSale = service.sumSale(new long[] {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18});
+        System.out.println(sumSale);
     }
 
 

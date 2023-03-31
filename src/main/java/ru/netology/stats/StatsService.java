@@ -17,54 +17,57 @@ public class StatsService {
     }
 
 
-    public long nijesred(long[] sales) {
-        long nijesred = 0;
-        long srednee = sumProdaj(sales) / sales.length;
+    public long belowTheAverage(long[] sales) {
+        long belowTheAverage = 0;
+        long srednee = sumSale(sales) / sales.length;
         for (long mesyac : sales) {
-            if (srednee >= mesyac)
-                nijesred = nijesred + 1;
+            if (srednee >= mesyac) {
+                belowTheAverage = belowTheAverage + 1;
+            }
 
         }
-        return nijesred;
+        return belowTheAverage;
 
     }
 
-    public long visheSred(long[] sales) {
-        long visheSred = 0;
-        long srednee = sumProdaj(sales) / sales.length;
+    public long aboveAverage(long[] sales) {
+        long aboveAverage = 0;
+        long srednee = sumSale(sales) / sales.length;
         for (long mesyac : sales) {
-            if (srednee <= mesyac)
-                visheSred = visheSred + 1;
-
+            if (srednee <= mesyac) {
+                aboveAverage = aboveAverage + 1;
+            }
         }
-        return visheSred;
+        return aboveAverage;
     }
 
-    public long sumProdaj(long[] sales) {
+    public long sumSale(long[] sales) {
         long summa = 0;
-        for (int i = 0; i <= sales.length - 1; i++)
+        for (int i = 0; i <= sales.length - 1; i++) {
             summa = summa + sales[i];
+        }
         return summa;
 
     }
 
-    public long srednee(long[] sales) {
-        long summa = sumProdaj(sales);
-        long kol = sales.length;
-        long sr = summa / kol;
-        return sr;
+    public long average(long[] sales) {
+        long sum = sumSale(sales);
+        long quantity = sales.length;
+        long average = sum / quantity;
+        return average;
 
     }
 
-    public long pikpr(long[] sales) {
+    public long peakSales(long[] sales) {
         long max = 0;
-        int nomer = 0;
-        for (int i = 0; i <= sales.length - 1; i++)
+        int number = 0;
+        for (int i = sales.length -1; i >= 0; i--) {
             if (max < sales[i]) {
                 max = sales[i];
-                nomer = i;
+                number = i;
             }
-        return nomer + 1;
+        }
+        return number + 1;
 
     }
 
